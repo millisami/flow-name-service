@@ -53,7 +53,7 @@ export default function Home() {
             <Navbar />
 
             <main className={styles.main}>
-                <h1>Your Registered Domains</h1>
+                <h2>Your Registered Domains</h2>
 
                 {!isInitialized ? (
                     <>

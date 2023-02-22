@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import { useAuth } from "@/contexts/AuthContext";
 import { checkIsAvailable, getRentCost } from "../flow/scripts";
 import { initializeAccount, registerDomain } from "../flow/transactions"
-import styles from "@/styles/Purchase.module.css";
 
 // Maintain a constant for seconds per year
 const SECONDS_PER_YEAR = 365 * 24 * 60 * 60;
@@ -71,7 +70,7 @@ export default function Purchase() {
     }, [name, years]);
 
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <title>Flow Name Service - Purchase</title>
                 <meta name="description" content="Flow Name Service" />
@@ -86,8 +85,8 @@ export default function Purchase() {
                     <button onClick={initialize}>Initialize Account</button>
                 </>
             ) : (
-                <main className={styles.main}>
-                    <div className={styles.inputGroup}>
+                <main>
+                    <div>
                         <span>Name: </span>
                         <input
                             type="text"
@@ -98,7 +97,7 @@ export default function Purchase() {
                         <span>.fns</span>
                     </div>
 
-                    <div className={styles.inputGroup}>
+                    <div>
                         <span>Duration: </span>
                         <input
                             type="number"
@@ -108,9 +107,13 @@ export default function Purchase() {
                         />
                         <span>years</span>
                     </div>
-                    <button onClick={purchase}>Purchase</button>
+                    {loading ? (
+                        <button aria-busy="true">Please wait...</button>
+                    ) : (
+                        <button onClick={purchase}>Purchase</button> 
+                    )}
+                    
                     <p>Cost: {cost} FLOW</p>
-                    <p>{loading ? "Loading..." : null}</p>
                 </main>
             )}
         </div>

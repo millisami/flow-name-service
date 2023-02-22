@@ -159,7 +159,7 @@ export default function ManageDomain() {
         </div>
 
         <div>
-          <h1>Update</h1>
+          <h2>Update</h2>
           <div className={styles.inputGroup}>
             <span>Update Bio: </span>
             <input
@@ -188,7 +188,7 @@ export default function ManageDomain() {
             </button>
           </div>
 
-          <h1>Renew</h1>
+          <h2>Renew</h2>
           <div className={styles.inputGroup}>
             <input
               type="number"
@@ -198,7 +198,7 @@ export default function ManageDomain() {
             />
             <span> years</span>
             <button onClick={renew} disabled={loading}>
-              Renew Domain
+              Renew
             </button>
           </div>
           <p>Cost: {cost} FLOW</p>

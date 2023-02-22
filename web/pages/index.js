@@ -2,10 +2,6 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import { getAllDomainInfos } from "../flow/scripts";
-import styles from "@/styles/Home.module.css";
-
-import { Inter } from '@next/font/google'
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   // Create a state variable for all the DomainInfo structs
@@ -24,7 +20,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Flow Name Service</title>
         <meta name="description" content="Flow Name Service" />
@@ -33,10 +29,12 @@ export default function Home() {
 
       <Navbar />
 
-      <main className={styles.main}>
-        <h1 className={inter.className}>All Registered Domains</h1>
+      <main>
+        <h1>All Registered Domains</h1>
+        <p>This is sample project created on <a href="https://flow.com/" target="_blank">Flow</a> blockchain which have been deployed on <a href="https://testnet.flowscan.org/contract/A.76a74722076aefdd.Domains" target="_blank">Flow Testnet</a>.<br />
+          To play around, install <a href="https://lilico.app/" target="_blank">Lilico</a> wallet, fund some <a href="https://testnet-faucet.onflow.org/" _target="blank">Flow test tokens</a>, connect wallet and purchase some .fns</p>
 
-        <div className={styles.domainsContainer}>
+        <div className="grid">
           {
             // If no domains were found, display a message highlighting that
             domainInfos.length === 0 ? (
@@ -45,10 +43,10 @@ export default function Home() {
               // Otherwise, loop over the array, and render information
               // about each domain
               domainInfos.map((di, idx) => (
-                <div className={styles.domainInfo} key={idx}>
-                  <p>
-                    {di.id} - {di.name}
-                  </p>
+                <article key={idx}>
+                  <header>
+                    <h4>{di.id} - {di.name}</h4>
+                  </header>
                   <p>Owner: {di.owner}</p>
                   <p>Linked Address: {di.address ? di.address : "None"}</p>
                   <p>Bio: {di.bio ? di.bio : "None"}</p>
@@ -61,7 +59,7 @@ export default function Home() {
                     Expires At:{" "}
                     {new Date(parseInt(di.expiresAt) * 1000).toLocaleDateString()}
                   </p>
-                </div>
+                </article>
               ))
             )}
         </div>

@@ -31,8 +31,8 @@ export default function Home() {
 
       <main>
         <h1>All Registered Domains</h1>
-        <p>This is sample project created on <a href="https://flow.com/" target="_blank">Flow</a> blockchain which have been deployed on <a href="https://testnet.flowscan.org/contract/A.76a74722076aefdd.Domains" target="_blank">Flow Testnet</a>.<br />
-          To play around, install <a href="https://lilico.app/" target="_blank">Lilico</a> wallet, fund some <a href="https://testnet-faucet.onflow.org/" _target="blank">Flow test tokens</a>, connect wallet and purchase some .fns</p>
+        <p>This is sample project created on <a href="https://flow.com/" target="_blank" rel="noreferrer">Flow</a> blockchain which have been deployed on <a href="https://testnet.flowscan.org/contract/A.76a74722076aefdd.Domains" target="_blank" rel="noreferrer">Flow Testnet</a>.<br />
+          To play around, install <a href="https://lilico.app/" target="_blank" rel="noreferrer">Lilico</a> wallet, fund some <a href="https://testnet-faucet.onflow.org/" _target="blank" rel="noreferrer">Flow test tokens</a>, connect wallet and purchase some .fns</p>
 
         <div className="grid">
           {

@@ -66,7 +66,7 @@ export default function Home() {
                             <p>You have not registered any FNS Domains yet</p>
                         ) : (
                             domainInfos.map((di, idx) => (
-                                <Link href={`/manage/${di.nameHash}`}>
+                                <Link href={`/manage/${di.nameHash}`} key={idx}>
                                     <div className={styles.domainInfo} key={idx}>
                                         <p>
                                             {di.id} - {di.name}

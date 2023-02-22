@@ -117,7 +117,7 @@ export default function ManageDomain() {
     if (router && router.query && isInitialized) {
       loadDomainInfo();
     }
-  }, [router]);
+  }, [router, isInitialized]);
 
   // Calculate cost everytime domainInfo or duration changes
   useEffect(() => {
